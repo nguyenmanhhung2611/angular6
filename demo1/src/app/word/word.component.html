@@ -1,0 +1,20 @@
+<h3 [hidden]="forgot">Languages: {{en}} - {{vn}}</h3>
+
+<!-- property binding -->
+<br>
+<img src="{{ imageUrl }}" alt="">
+<br>
+<img [src]="imageUrl" alt="">
+
+
+<!-- event binding -->
+<br>
+<button (click)="forgot = !forgot">Toggle forgot</button>
+<button (click)="toggleForgot()">Toggle forgot 2</button>
+
+<br>
+<!-- Process text input / $event: chua thong tin ve event -->
+<!-- <input placeholder="User input" (keyup)="showName($event)"> -->
+<!-- 2 way binding -->
+<input [(ngModel)]="name">
+<h3>Your name is {{ name }}</h3>
