@@ -1,3 +1,6 @@
+<p>
+    app works!
+</p>
 <h3 [hidden]="forgot">Languages: {{en}} - {{vn}}</h3>
 
 <!-- property binding -->
@@ -16,5 +19,21 @@
 <!-- Process text input / $event: chua thong tin ve event -->
 <!-- <input placeholder="User input" (keyup)="showName($event)"> -->
 <!-- 2 way binding -->
-<input [(ngModel)]="name">
-<h3>Your name is {{ name }}</h3>
+<input [(ngModel)]="name" #txtUsername>
+
+<!-- template reference variable -->
+<br>
+<code>{{ txtUsername.value | json }}</code>
+
+<!-- Binding & class binding -->
+<!-- <h3 [style.color]="name.length % 2 === 0 ? 'red' : 'black'">Your name is {{ name }}</h3> -->
+<!-- <h3 [style.color]="isHighLight ? 'red' : 'black'" [style.fontSize]="isHighLight ? '40px' : '20px'">
+    Your name is {{ name }}
+</h3> -->
+<h3 [ngStyle]="name.length % 2 === 0 ? evenStyle : oddStyle">
+    Your name is {{ name }}
+</h3>
+
+<div [class]="isHighLight ? 'circle' : 'square'"></div>
+<div [class.circle]="!isHighLight" [class.square]="isHighLight"></div>
+<div [ngClass]="currentClass"></div>

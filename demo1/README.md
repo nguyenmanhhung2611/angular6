@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Directive là gì ?
+
+Directive đưa ra các chỉ dẫn để Angular chuyển đổi template thành DOM
+
+Có 3 loại directive
+
+1. Component -> Directive với 1 template (EX: ngStyle, ngClass)
+
+2. Attribute directives -> Thay đổi việc hiển thị hoặc hành vi của các DOM, component hoặc directive khác
+
+3. Structural directive -> Thường thêm bớt các dOM (EX: ngIf, ngFor)

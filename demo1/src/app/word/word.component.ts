@@ -29,4 +29,9 @@ export class WordComponent {
     this.name = event.target.value;
   }
 
+  isHighLight = true;
+  evenStyle = { color: 'red', fontSize: '40px' };
+  oddStyle = { color: 'black', fontSize: '20px' };
+
+  currentClass = { circle: !this.isHighLight, square: this.isHighLight };
 }
