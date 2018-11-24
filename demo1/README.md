@@ -37,3 +37,10 @@ Có 3 loại directive
 2. Attribute directives -> Thay đổi việc hiển thị hoặc hành vi của các DOM, component hoặc directive khác
 
 3. Structural directive -> Thường thêm bớt các dOM (EX: ngIf, ngFor)
+
+## Notice
+
+[] -> @Input
+() -> @Output
+String -> Object
+string -> chuỗi
