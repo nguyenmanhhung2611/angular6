@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { WordComponent } from './word/word.component';
@@ -9,13 +10,15 @@ import { StructComponent } from './struct/struct.component';
 import { WordsComponent } from './words/words.component';
 import { PersonComponent } from './person/person.component';
 import { ListPersonComponent } from './list-person/list-person.component';
-import { ChildComponent } from './child.component'
-import { ParentComponent } from './parent.component'
-import { Child2Component } from './child2.component'
-import { Parent2Component } from './parent2.component'
+import { ChildComponent } from './child.component';
+import { ParentComponent } from './parent.component';
+import { Child2Component } from './child2.component';
+import { Parent2Component } from './parent2.component';
 import { CardComponent } from './card.component';
-import { LearnPipeComponent } from './learn-pipe/learn-pipe.component'
-import { RoundPipe } from './round.pipe'
+import { LearnPipeComponent } from './learn-pipe/learn-pipe.component';
+import { IpComponent } from './ip.component';
+import { RoundPipe } from './round.pipe';
+import { IpService } from './ip.service';
 
 @NgModule({
   declarations: [
@@ -32,13 +35,15 @@ import { RoundPipe } from './round.pipe'
     Parent2Component,
     CardComponent,
     LearnPipeComponent,
+    IpComponent,
     RoundPipe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [IpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
