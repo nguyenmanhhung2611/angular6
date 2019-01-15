@@ -3,12 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { CommonModule } from '@angular/common';
 
-import { ContactsComponent } from './contacts/contacts.component';
+import { ContactsModule } from './contacts/contacts.module'
 import { ContactDetailComponent } from './contact-detail/contact-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routersConfig: Routes = [
-    { path: 'contacts', component: ContactsComponent },
     { path: 'detail/:id/:name/:phoneNumber', component: ContactDetailComponent },
     { path: '', redirectTo: '/contacts', pathMatch: 'full' },
     { path: '**', component: PageNotFoundComponent }
@@ -16,12 +15,12 @@ const routersConfig: Routes = [
 
 @NgModule({
     imports: [
+        ContactsModule,
         RouterModule.forRoot(routersConfig),
         CommonModule
     ],
     declarations: [
         PageNotFoundComponent,
-        ContactsComponent,
         ContactDetailComponent
     ],
     exports: [RouterModule]
