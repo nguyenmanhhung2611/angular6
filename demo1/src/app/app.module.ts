@@ -3,13 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { Routes, RouterModule } from '@angular/router';
-const routersConfig: Routes = [
-  { path: 'contacts', component: ContactsComponent },
-  { path: 'detail', component: ContactDetailComponent },
-  { path: '', redirectTo: '/contacts', pathMatch: 'full' },
-  { path: '**', component: PageNotFoundComponent }
-];
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { WordComponent } from './word/word.component';
@@ -30,9 +24,6 @@ import { IpService } from './ip.service';
 import { WeatherComponent } from './weather/weather.component';
 import { SignInComponent } from './sign-in.component';
 import { SignUpComponent } from './sign-up.component';
-import { ContactsComponent } from './contacts/contacts.component';
-import { ContactDetailComponent } from './contact-detail/contact-detail.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -53,17 +44,14 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RoundPipe,
     WeatherComponent,
     SignInComponent,
-    SignUpComponent,
-    ContactsComponent,
-    ContactDetailComponent,
-    PageNotFoundComponent
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot(routersConfig)
+    AppRoutingModule
   ],
   providers: [IpService],
   bootstrap: [AppComponent]
