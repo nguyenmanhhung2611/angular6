@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SignInService } from './sign-in.service'
 
 @Component({
     selector: 'app-sign-in',
@@ -43,14 +44,21 @@ import { Component } from '@angular/core';
         <p>{{ txtEmail?.errors | json }}</p>
         <p>{{ txtPassword?.errors | json }}</p>
         <p>{{ formsignIn?.value | json }}</p>
-    `
+    `,
+    providers: [SignInService]
 })
 export class SignInComponent {
     email = '';
     password = '';
 
+    constructor(private signInService: SignInService) {
+    }
+
     onSubmit(formsignIn) {
-        console.log(formsignIn);
+        // console.log(formsignIn);
         // throw new Error('Form is invalid');
+        this.signInService.sendPost(formsignIn.value)
+            .then(result => console.log(result))
+            .catch(err => console.log(err));
     }
 }
