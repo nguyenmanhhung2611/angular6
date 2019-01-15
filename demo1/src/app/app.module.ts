@@ -20,6 +20,7 @@ import { IpComponent } from './ip.component';
 import { RoundPipe } from './round.pipe';
 import { IpService } from './ip.service';
 import { WeatherComponent } from './weather/weather.component';
+import { SignInComponent } from './sign-in.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { WeatherComponent } from './weather/weather.component';
     LearnPipeComponent,
     IpComponent,
     RoundPipe,
-    WeatherComponent
+    WeatherComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,
